@@ -1,123 +1,730 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>𝗔𝗬𝗨𝗦𝗛 𝗠𝗔𝗙𝗜𝗔™ [ESTD 2021] 🔱</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script src="https://cdn.tailwindcss.com"></script>
+    <title>SHUBHAM PANDIT</title>
 
-<style>
-  body {
-    background: linear-gradient(135deg, #000000, #111111, #1a1a1a);
-    font-family: 'Poppins', sans-serif;
-  }
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  /* Glass effect */
-  .glass {
-    background: rgba(255, 215, 0, 0.05);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 215, 0, 0.2);
-  }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-  /* Glow animation */
-  @keyframes glow {
-    0% { box-shadow: 0 0 10px rgba(255,255,255,0.2); }
-    50% { box-shadow: 0 0 30px rgba(255,255,255,0.4); }
-    100% { box-shadow: 0 0 10px rgba(255,255,255,0.2); }
-  }
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
 
-  /* Smooth scale */
-  @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-6px); }
-    100% { transform: translateY(0px); }
-  }
+            background:
+                radial-gradient(circle at 50% 20%, rgba(245, 166, 35, 0.10), transparent 35%),
+                radial-gradient(circle at 10% 90%, rgba(232, 195, 42, 0.06), transparent 30%),
+                #1c1508;
 
-  .cta-btn {
-    animation: glow 2s infinite;
-    transition: all 0.3s ease;
-  }
+            color: #fff;
+            overflow-x: hidden;
 
-  .cta-btn:hover {
-    transform: scale(1.08);
-    background: #ffffff;
-    color: #000;
-  }
+            padding: 50px 10px;
+        }
 
-  .logo-anim {
-    animation: float 3s ease-in-out infinite;
-  }
-</style>
+        /* =========================
+           FLOATING PARTICLES
+        ========================= */
+
+        .particle {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: #fff;
+            border-radius: 50%;
+            opacity: 0.45;
+            pointer-events: none;
+            animation: move 10s linear infinite;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0.5;
+            }
+
+            100% {
+                transform: translateY(-1000px);
+                opacity: 0;
+            }
+        }
+
+        body > div {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* =========================
+           MAIN CARD
+        ========================= */
+
+        .card {
+            width: 360px;
+            max-width: 96vw;
+
+            padding: 38px 28px 28px;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255, 255, 255, 0.09),
+                    rgba(255, 255, 255, 0.035)
+                );
+
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+
+            border: 1px solid rgba(255, 255, 255, 0.12);
+
+            text-align: center;
+
+            box-shadow:
+                0 0 60px rgba(0, 0, 0, 0.55),
+                inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            width: 220px;
+            height: 220px;
+
+            background: rgba(245, 166, 35, 0.08);
+            filter: blur(60px);
+            border-radius: 50%;
+
+            pointer-events: none;
+        }
+
+        /* =========================
+           CRICKET BADGE
+        ========================= */
+
+        .cricket-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            background: rgba(60, 100, 40, 0.28);
+
+            border: 1px solid rgba(126, 200, 80, 0.35);
+
+            border-radius: 50px;
+
+            padding: 7px 15px;
+
+            font-size: 11px;
+            font-weight: 600;
+
+            color: #fff;
+
+            letter-spacing: 0.5px;
+
+            margin-bottom: 20px;
+
+            backdrop-filter: blur(10px);
+
+            box-shadow:
+                0 0 15px rgba(80, 140, 60, 0.20);
+        }
+
+        .cricket-badge::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+
+            background: #7ec850;
+
+            border-radius: 50%;
+
+            box-shadow: 0 0 10px #7ec850;
+
+            animation: blink 1.4s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.25;
+            }
+        }
+
+        /* =========================
+           PROFILE
+        ========================= */
+
+        .profile-wrap {
+            position: relative;
+
+            width: 130px;
+            height: 130px;
+
+            margin: 0 auto 16px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-spinner {
+            position: absolute;
+
+            inset: 0;
+
+            border-radius: 50%;
+
+            background:
+                conic-gradient(
+                    #f5a623 0deg,
+                    #e8c32a 120deg,
+                    #fff 240deg,
+                    #f5a62399 360deg
+                );
+
+            filter: blur(1.5px);
+
+            animation: spinBorder 2.2s linear infinite;
+        }
+
+        .profile {
+            width: 120px;
+            height: 120px;
+
+            border-radius: 50%;
+
+            border: 5px solid #f5a623;
+
+            object-fit: cover;
+
+            position: relative;
+            z-index: 2;
+
+            background: #1c1508;
+
+            box-shadow:
+                0 0 20px rgba(245, 166, 35, 0.30);
+        }
+
+        @keyframes spinBorder {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* =========================
+           HEADING
+        ========================= */
+
+        h2 {
+            margin-bottom: 12px;
+
+            font-size: 24px;
+
+            font-weight: 800;
+
+            letter-spacing: 0.3px;
+
+            text-shadow:
+                0 0 12px rgba(245, 166, 35, 0.18);
+        }
+
+        /* =========================
+           DESCRIPTION
+        ========================= */
+
+        .text {
+            font-size: 14px;
+
+            line-height: 1.6;
+
+            color: rgba(255, 255, 255, 0.88);
+
+            margin-bottom: 25px;
+        }
+
+        .text-main {
+            margin-bottom: 12px;
+        }
+
+        .expertise {
+            font-size: 12px;
+
+            font-weight: 700;
+
+            color: #f5c45c;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 7px;
+        }
+
+        .sub-text {
+            font-size: 11px;
+
+            color: rgba(255, 255, 255, 0.55);
+
+            margin-top: 3px;
+        }
+
+        /* =========================
+           TELEGRAM BUTTON
+        ========================= */
+
+        .btn {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 11px;
+
+            width: 100%;
+
+            padding: 17px 25px;
+
+            border-radius: 60px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f5a623,
+                    #e8c32a
+                );
+
+            color: #1c1508;
+
+            text-decoration: none;
+
+            font-weight: 800;
+
+            font-size: 17px;
+
+            position: relative;
+
+            box-shadow:
+                0 0 15px rgba(245, 166, 35, 0.45);
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .btn i {
+            font-size: 20px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px) scale(1.02);
+
+            box-shadow:
+                0 0 25px rgba(245, 166, 35, 0.70);
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        /* =========================
+           TIMER
+        ========================= */
+
+        .timer {
+            margin-top: 16px;
+
+            font-size: 11px;
+
+            color: rgba(255, 255, 255, 0.55);
+
+            letter-spacing: 0.4px;
+        }
+
+        .timer span {
+            color: #f5a623;
+
+            font-size: 15px;
+
+            font-weight: 900;
+
+            margin: 0 2px;
+        }
+
+        /* =========================
+           PREMIUM ADS CREDIT
+        ========================= */
+
+        .ads-credit {
+            margin: 20px auto 0;
+
+            width: fit-content;
+            max-width: 100%;
+
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 7px;
+
+            padding: 9px 15px;
+
+            border-radius: 50px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(245, 166, 35, 0.10),
+                    rgba(255, 255, 255, 0.035)
+                );
+
+            border: 1px solid rgba(245, 166, 35, 0.25);
+
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, 0.18),
+                inset 0 1px 0 rgba(255, 255, 255, 0.07);
+
+            font-size: 10px;
+
+            letter-spacing: 0.25px;
+
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        .ads-label {
+            opacity: 0.65;
+        }
+
+        .ads-dot {
+            width: 4px;
+            height: 4px;
+
+            border-radius: 50%;
+
+            background: #f5a623;
+
+            box-shadow:
+                0 0 8px rgba(245, 166, 35, 0.9);
+        }
+
+        .ads-credit a {
+            color: #f5c45c;
+
+            text-decoration: none;
+
+            font-weight: 800;
+
+            letter-spacing: 0.2px;
+
+            transition: all 0.3s ease;
+        }
+
+        .ads-credit a:hover {
+            color: #fff;
+
+            text-shadow:
+                0 0 10px rgba(245, 166, 35, 0.8);
+        }
+
+        .verified {
+            color: #7ec850;
+
+            font-size: 10px;
+
+            text-shadow:
+                0 0 8px rgba(126, 200, 80, 0.7);
+        }
+
+        /* =========================
+           DISCLAIMER
+        ========================= */
+
+        .card-disclaimer {
+            margin-top: 18px;
+
+            padding-top: 15px;
+
+            border-top:
+                1px dashed rgba(255, 255, 255, 0.14);
+
+            font-size: 10px;
+
+            color: rgba(255, 255, 255, 0.45);
+
+            line-height: 1.6;
+
+            text-align: center;
+        }
+
+        .card-disclaimer strong {
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding-top: 35px;
+                padding-bottom: 35px;
+            }
+
+            .card {
+                width: 100%;
+                max-width: 370px;
+
+                padding: 30px 17px 23px;
+
+                border-radius: 21px;
+            }
+
+            .profile-wrap {
+                width: 105px;
+                height: 105px;
+            }
+
+            .profile {
+                width: 96px;
+                height: 96px;
+
+                border-width: 4px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .text {
+                font-size: 13px;
+            }
+
+            .btn {
+                padding: 16px 20px;
+                font-size: 16px;
+            }
+
+            .ads-credit {
+                font-size: 9px;
+                padding: 8px 12px;
+            }
+
+            .card-disclaimer {
+                font-size: 9.5px;
+            }
+        }
+    </style>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1724823755275797');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1724823755275797&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 
-<body class="text-white">
+<body>
 
-<div class="min-h-screen flex items-center justify-center px-4">
+    <!-- Floating Particles -->
+    <script>
+        for (let i = 0; i < 70; i++) {
 
-  <div class="glass p-8 rounded-3xl text-center max-w-md w-full shadow-2xl">
+            const p = document.createElement("div");
 
-    <!-- Logo -->
-    <img src="colo.jpg.jpg" class="w-24 h-24 mx-auto rounded-full border border-white/20 shadow-lg logo-anim">   
-    
-    <!-- Heading -->
-    <h1 class="text-3xl font-bold mt-5 tracking-wide text-yellow-500">
-   𝗔𝗬𝗨𝗦𝗛 𝗠𝗔𝗙𝗜𝗔™ [ESTD 2021] 🔱
-    </h1>
+            p.className = "particle";
 
-    <p class="mt-2 text-gray-400 text-sm">
-       TOSS • MATCH • PREDICTION • SESSION 
-    </p>
+            p.style.left = Math.random() * 100 + "%";
+            p.style.top = Math.random() * 100 + "%";
 
-    <!-- Divider -->
-    <div class="w-16 h-[2px] bg-white mx-auto my-4 opacity-30"></div>
+            p.style.animationDuration =
+                5 + Math.random() * 10 + "s";
 
-    <!-- Countdown -->
-    <div class="mt-3 text-sm text-gray-300">
-      ⏳ Limited Access
-      <span id="countdown" class="text-xl font-bold mx-2 text-white"></span>
-      Seconds
+            p.style.animationDelay =
+                Math.random() * 5 + "s";
+
+            document.body.appendChild(p);
+        }
+    </script>
+
+    <div>
+
+        <div class="card">
+
+            <!-- Cricket Badge -->
+            <div class="cricket-badge">
+                🏏 Cricket Updates &amp; Insights
+            </div>
+
+            <!-- Profile -->
+            <div class="profile-wrap">
+
+                <span class="profile-spinner"></span>
+
+                <img
+                    src="photo_2026-05-25_23-49-10.jpg"
+                    class="profile"
+                    alt="ANNA REDDY">
+            </div>
+
+            <!-- Heading -->
+            <h2>SHUBHAM PANDIT</h2>
+
+            <!-- Description -->
+            <div class="text">
+
+                <p class="text-main">
+                    Honest analysis • Match insights • Community driven
+                </p>
+
+                <p class="expertise">
+                    ✦ 12+ Years Expertise ✦
+                </p>
+
+                <p class="sub-text">
+                    Stay informed with transparent cricket analysis
+                </p>
+
+            </div>
+
+            <!-- Telegram CTA -->
+            <a
+                class="btn"
+                href="https://t.me/+tFqetc1y-xZiOTRl"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                <i class="fab fa-telegram"></i>
+
+                Subscribe Free
+
+            </a>
+
+            <!-- Countdown -->
+            <div class="timer">
+                Redirecting in
+              <span id="count">30</span>
+                seconds...
+            </div>
+
+            <!-- Premium Ads Agency Credit -->
+            <div class="ads-credit">
+
+                <span class="ads-label">
+                    Ads Managed by
+                </span>
+
+                <span class="ads-dot"></span>
+
+                <a
+                    href="https://t.me/Shubhamads"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    Shubham Ads Agency
+
+                </a>
+
+                <span class="verified">
+                    ✦
+                </span>
+
+            </div>
+
+            <!-- Disclaimer -->
+            <div class="card-disclaimer">
+
+                <strong>Disclaimer:</strong>
+                Cricket updates &amp; analysis only.
+                No betting or gambling promoted.
+                Verify independently.
+
+            </div>
+
+        </div>
+
     </div>
 
-    <!-- Info Box -->
-    <div class="mt-5 bg-white/5 p-4 rounded-xl border border-white/10">
-      <p class="text-sm text-gray-300 leading-relaxed">
-        Get structured match insights, performance trends, and data-backed analysis for upcoming tennis matches.
-      </p>
-    </div>
+    <!-- Countdown Script -->
+    <script>
 
-    <!-- CTA -->
-    <div class="mt-6 flex justify-center">
-      <a href="https://t.me/+nCSYDAq--fA5MzVl" target="_blank" rel="noopener noreferrer"  >
-        <button class="cta-btn px-8 py-3 rounded-xl font-semibold border-2 border-yellow-500 text-black bg-white flex items-center gap-3">
-          <img src="telegram.jpg" class="w-6 h-6 rounded-full">
-          JOIN TELEGRAM
-        </button>
-      </a>
-    </div>
-    
-    <!-- Footer -->
-    <p class="mt-5 text-xs text-gray-500 leading-relaxed">
-      This platform is for informational purposes only. We do not promote any betting or gambling activity.
-    </p>
+        let time = 30;
 
-  </div>
+        const counter =
+            document.getElementById("count");
 
-</div>
+        const redirectUrl =
+            "https://t.me/+tFqetc1y-xZiOTRl";
 
-<script>
-let timeLeft = 25;
-const countdownElement = document.getElementById('countdown');
+        const countdown =
+            setInterval(() => {
 
-setInterval(() => {
-  countdownElement.textContent = timeLeft;
-  timeLeft--;
+                time--;
 
-  if (timeLeft < 0) {
-    timeLeft = 25;
-  }
-}, 1000);
-</script>
+                counter.innerText =
+                    String(time).padStart(2, "0");
+
+                if (time <= 0) {
+
+                    clearInterval(countdown);
+
+                    window.location.href =
+                        redirectUrl;
+                }
+
+            }, 1000);
+
+    </script>
 
 </body>
-</html>
+
+</html> 
